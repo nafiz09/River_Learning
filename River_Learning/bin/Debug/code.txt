@@ -1,0 +1,166 @@
+# include "iGraphics.h"
+
+int f=0;
+FILE *fp;
+/*
+function iDraw() is called again and again by the system.
+*/
+void iDraw()
+{
+//place your drawing codes here
+    iClear();
+    if(f==0)
+    {
+        ///home screen
+        iShowBMP(0, 0, "home back.bmp");
+        iSetColor(255, 215, 0);
+        iRectangle(130, 300, 240, 67);///lower box
+        iRectangle(130, 367, 240, 67);///middle box
+        iRectangle(130, 434, 240, 67);///upper box
+        iText(200, 450, "START");
+        iText(150, 383, "INSTRUCTIONS");
+        iText(200, 316, "QUIT");
+    }
+
+    if(f==1)
+    {
+        ///main game page
+        iText(200, 620, "SCORE: ");
+        iText(30, 530, "SHAPES");
+        iText(430, 530, "COLORS");
+
+        iSetColor(47, 141, 255);
+        iFilledRectangle(100, 0, 300, 600);
+
+        iSetColor(255, 255, 255);
+        iShowBMP(218, 20, "boat.bmp");
+
+        iLine(0, 600, 500, 600);///draws horizontal line
+
+        ///for shapes buttons
+        iSetColor(255, 0, 0);
+        iFilledRectangle(0, 0, 100, 100);
+
+        iSetColor(0, 255, 0);
+        iFilledRectangle(0, 100, 100, 100);
+
+        iSetColor(255, 173, 47);
+        iFilledRectangle(0, 200, 100, 100);
+
+        iSetColor(0, 0, 255);
+        iFilledRectangle(0, 300, 100, 100);
+
+        iSetColor(255, 211, 0);
+        iFilledRectangle(0, 400, 100, 100);
+
+        iSetColor(255, 255, 255);
+        iFilledRectangle(30, 30, 40, 40);
+        iFilledCircle(50, 150, 20);
+        iFilledCircle(50, 250, 20, 3);
+        iFilledEllipse(50, 350, 30, 40, 4);
+        iFilledCircle(50, 450, 20, 5);
+
+        ///for color buttons
+        iSetColor(255, 0, 0);///red
+        iFilledRectangle(400, 0, 100, 100);
+
+        iSetColor(0, 255, 0);///green
+        iFilledRectangle(400, 100, 100, 100);
+
+        iSetColor(255, 173, 47);///orange
+        iFilledRectangle(400, 200, 100, 100);
+
+        iSetColor(0, 0, 255);///blue
+        iFilledRectangle(400, 300, 100, 100);
+
+        iSetColor(255, 211, 0);///yellow
+        iFilledRectangle(400, 400, 100, 100);
+    }
+    if(f==2){
+        ///instruction page
+
+
+        iText(10, 10, "GO BACK");
+
+    }
+    if(f==3){
+        ///quit botton
+        exit(1);
+    }
+    if(f==4){
+
+    }
+
+
+}
+/*
+function iMouseMove() is called when the user presses and drags the mouse.
+(mx, my) is the position where the mouse pointer is.
+*/
+void iMouseMove(int mx, int my)
+{
+//place your codes here
+}
+/*
+function iMouse() is called when the user presses/releases the mouse.
+(mx, my) is the position where the mouse pointer is.
+*/
+void iMouse(int button, int state, int mx, int my)
+{
+    if(button == GLUT_LEFT_BUTTON && state == GLUT_DOWN)
+    {
+//place your codes here
+        if(mx>130 && my>434 && mx <370 && my<501 && f==0){
+            f=1;
+        }
+        if(mx>130 && my>367 && mx <370 && my<433 && f==0){
+            f=2;
+        }
+        if(mx>130 && my>300 && mx <370 && my<366 && f==0){
+            f=3;
+        }
+        if(mx>10 && my>10 && mx <50 && my<50 && f==2){
+            f=0;
+        }
+
+    }
+    if(button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
+    {
+//place your codes here
+    }
+}
+/*
+function iKeyboard() is called whenever the user hits a key in keyboard.
+key- holds the ASCII value of the key pressed.
+*/
+void iKeyboard(unsigned char key)
+{
+    if(key == 'q')
+    {
+//do something with 'q'
+    }
+//place your codes for other keys here
+}
+/*
+function iSpecialKeyboard() is called whenver user hits special keys likefunction
+keys, home, end, pg up, pg down, arraows etc. you have to use
+appropriate constants to detect them. A list is:
+GLUT_KEY_F1, GLUT_KEY_F2, GLUT_KEY_F3, GLUT_KEY_F4, GLUT_KEY_F5, GLUT_KEY_F6,
+GLUT_KEY_F7, GLUT_KEY_F8, GLUT_KEY_F9, GLUT_KEY_F10, GLUT_KEY_F11,
+GLUT_KEY_F12, GLUT_KEY_LEFT, GLUT_KEY_UP, GLUT_KEY_RIGHT, GLUT_KEY_DOWN,
+GLUT_KEY_PAGE UP, GLUT_KEY_PAGE DOWN, GLUT_KEY_HOME, GLUT_KEY_END,
+GLUT_KEY_INSERT */
+void iSpecialKeyboard(unsigned char key)
+{
+    if(key == GLUT_KEY_END)
+    {
+        exit(0);
+    }
+//place your codes for other keys here
+}
+int main()
+{
+//place your own initialization codes here.
+    iInitialize(500, 650, "RIVER LEARNING");
+    return 0;
+}

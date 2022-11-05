@@ -1,0 +1,5 @@
+Solve the puzzle on the logs to make them disappear.
+Logs have 3 types of puzzles on them:
+MATHEMATICAL: Type the answer of the expression from  the keyboard and press enter.
+SHAPES: Click on the buttons(left side of the screen) of the correct shape in the same sequence as the namesappears on the log.
+COLORS: Click on the buttons(right side of the screen)of the correct color in the same sequence as the namesappears on the log.

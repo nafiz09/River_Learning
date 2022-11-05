@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1462170168 source:g:\river_learning\imain.cpp
+	"iGraphics.h"
+
+1493810122 g:\river_learning\igraphics.h
+	<stdio.h>
+	<stdlib.h>
+	<gl/glut.h>
+	<time.h>
+	<math.h>
+	<windows.h>
+	<gl\glaux.h>
+
+1462159914 source:g:\river_learning\textinputdemo.cpp
+	"iGraphics.h"
+
+1530802225 source:g:\river_learning\picturedemo.cpp
+	"iGraphics.h"
+
+1532182556 source:g:\river_learning\main.cpp
+	"iGraphics.h"
+	<stdio.h>
+	<string.h>
+	<time.h>
+
+1532448734 source:g:\river_learning\main 22.cpp
+	"iGraphics.h"
+	<stdio.h>
+	<string.h>
+	<time.h>
+
